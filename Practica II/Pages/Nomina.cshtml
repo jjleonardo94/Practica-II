@@ -1,0 +1,46 @@
+﻿@page
+@model Practica_II.Pages.NominaModel
+@{
+    ViewData["Title"] = "Nómina";   
+}
+
+<style>
+    table thead {
+      color: #fff;
+      background-color: #2271b3;
+    } 
+</style>
+
+<h3 align="center" >Nómina de empleados</h3>
+<hr />
+
+<table class="table table-bordered table-responsive-md table-striped text-center">
+        <thead>
+          <tr>
+            <th class="text-center">Nombres</th>
+            <th class="text-center">Apellidos</th>
+            <th class="text-center">Cargo</th>
+            <th class="text-center">Salario Mensual</th>
+            <th class="text-center">Descuento AFP</th>
+            <th class="text-center">Descuento ARS</th>
+            <th class="text-center">Descuento ISR</th>
+            <th class="text-center">Total Descuento</th>
+            <th class="text-center">Salario Neto</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (var person in Model.Persons) {
+          <tr>
+            <td class="pt-3-half">@person.Nombres</td>
+            <td class="pt-3-half">@person.Apellidos</td>
+            <td class="pt-3-half">@person.Cargo</td>
+            <td class="pt-3-half">@person.Salario</td>
+            <td class="pt-3-half">@person.AFP</td>
+            <td class="pt-3-half">@person.ARS</td>
+            <td class="pt-3-half">@person.ISR</td>
+            <td class="pt-3-half">@person.Total_Descuento</td>
+            <td class="pt-3-half">@person.Salario_Neto</td>
+          </tr>
+          }
+        </tbody>
+      </table>
